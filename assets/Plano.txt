@@ -1,0 +1,71 @@
+# Plano Frontend - CovidDataFlow
+
+## 🎯 Objetivo
+Criar uma interface profissional em React + TypeScript que:
+- Mostre inicialmente um artigo explicativo sobre a COVID.
+- Tenha um botão chamativo que, ao ser clicado, deslize a tela para a lateral.
+- Exiba uma nova seção com cor diferente, contendo:
+  - Um resumo do artigo.
+  - Um gráfico dinâmico alimentado pelo banco de dados do backend Python.
+
+---
+
+## 📂 Estrutura de Diretórios
+
+coviddataflow-frontend/
+│
+├── public/                # Arquivos estáticos (favicon, index.html)
+├── src/
+│   ├── assets/            # Ícones, imagens, estilos globais
+│   ├── components/
+│   │   ├── Article.tsx    # Componente que mostra o artigo completo
+│   │   ├── Summary.tsx    # Componente que mostra resumo + gráfico
+│   │   ├── SlidePanel.tsx # Controla transição lateral
+│   │   └── Button.tsx     # Botão chamativo
+│   ├── pages/
+│   │   └── Home.tsx       # Tela inicial que junta tudo
+│   ├── services/
+│   │   └── api.ts         # Configuração para buscar dados do backend
+│   ├── hooks/             # Hooks customizados (ex: useCovidData)
+│   ├── context/           # Contexto global (tema, dados)
+│   ├── styles/            # Estilos globais (CSS/Tailwind)
+│   ├── App.tsx            # Componente raiz
+│   └── index.tsx          # Ponto de entrada
+│
+├── package.json           # Dependências e scripts
+├── tsconfig.json          # Configuração do TypeScript
+└── README.md              # Documentação do frontend
+
+---
+
+## 🔧 Tecnologias
+- React + TypeScript
+- Axios (consumir API do backend)
+- React Router (navegação)
+- Chart.js ou Recharts (gráficos dinâmicos)
+- TailwindCSS ou Styled Components (estilização moderna)
+
+---
+
+## 📊 Fluxo de Funcionamento
+1. **Tela inicial (Home.tsx)**  
+   - Renderiza `Article.tsx` com texto explicativo.  
+   - Mostra `Button.tsx` chamativo (“Ver Resumo”).  
+
+2. **Interação**  
+   - Ao clicar no botão, `SlidePanel.tsx` aplica transição lateral.  
+   - Surge `Summary.tsx` com cor diferente e texto resumido.  
+   - `Summary.tsx` consome dados da API (`services/api.ts`) e renderiza gráfico.  
+
+3. **Gráfico**  
+   - Alimentado pelo banco de dados via backend Python.  
+   - Mostra casos, óbitos ou outros indicadores relevantes.  
+
+---
+
+## 🚀 Próximos Passos
+- Implementar `Article.tsx` com conteúdo estático inicial.  
+- Criar `Button.tsx` com estilo chamativo (cores fortes, animação hover).  
+- Implementar `SlidePanel.tsx` para transição lateral suave.  
+- Criar `Summary.tsx` com integração ao backend e gráfico dinâmico.  
+- Testar fluxo completo: abrir → artigo → botão → resumo + gráfico.
