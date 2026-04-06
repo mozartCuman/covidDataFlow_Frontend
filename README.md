@@ -1,51 +1,51 @@
-<<<<<<< HEAD
-# covidDataFlow_Frontend
-Frontend do meu projeto sobre o covid para manusear e me divertir com dados.
-=======
-# Getting Started with Create React App
+# 📊 covidDataFlow_Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontend do meu projeto sobre COVID, criado para manipular e explorar dados de forma divertida e interativa.  
+Este frontend **irá se conectar** ao [covidDataFlow (Backend)](https://github.com/mozartCuman/covidDataFlow) para:
 
-## Available Scripts
+- **Persistência de dados** → salvar informações coletadas em banco de dados  
+- **Recuperação de dados** → buscar e exibir dados já armazenados  
+- **Scraping** → coletar novas informações de fontes externas sobre COVID  
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✅ O que já foi feito
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Estrutura inicial criada com **Create React App**  
+- Configuração de cores e paleta visual (`colors.css`)  
+- Componentes principais (`Article`, `Summary`, `Header`)  
+- Página **SouthAmerica** com gráfico de barras usando **Chart.js**  
+- Estilização dos cards com **cinza claro**, bordas arredondadas e sombra suave  
+- Integração com GitHub (`git remote origin` configurado corretamente)  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## 🔜 O que ainda será feito
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Conexão com o **backend** para persistência, recuperação e scraping  
+- Páginas para outras regiões (América do Norte, Europa, Ásia etc.)  
+- Gráficos responsivos para telas menores (mobile/tablet)  
+- Filtros interativos (por país, período, tipo de dado)  
+- Rotas com React Router para navegação entre páginas  
+- Design aprimorado usando a paleta de cores (bordeaux, esmeralda, cobalto, chumbo)  
+- Testes automatizados para garantir qualidade do frontend  
+- Documentação da API usada para alimentar os gráficos  
+- Deploy do frontend (Vercel ou Netlify)  
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Scripts Disponíveis
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `npm start` → roda o app em modo desenvolvimento  
+- `npm test` → inicia o runner de testes  
+- `npm run build` → cria a versão de produção  
+- `npm run eject` → expõe toda a configuração (irreversível)  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📚 Saiba Mais
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
->>>>>>> 229d54b (parte inicial do front sem conexao com bak)
+- [Create React App](https://create-react-app.dev/docs/getting-started/)  
+- [React](https://react.dev/)  
+- [Chart.js](https://www.chartjs.org/)  
+- [covidDataFlow Backend](https://github.com/mozartCuman/covidDataFlow)  
