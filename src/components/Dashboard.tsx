@@ -1,18 +1,24 @@
-// src/components/Dashboard.tsx
 import { useEffect, useState } from "react";
 
 type DashboardProps = {
   title: string;
-  fetchData: () => Promise<any>; // função de API passada como prop
+  fetchData: () => Promise<any>;
 };
 
 export default function Dashboard({ title, fetchData }: DashboardProps) {
   const [data, setData] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchData().then(setData);
+    fetchData()
+      .then(setData)
+      .catch(err => {
+        console.error("Erro ao buscar dados:", err);
+        setError(err.message);
+      });
   }, [fetchData]);
 
+  if (error) return <p>Erro ao carregar {title}: {error}</p>;
   if (!data) return <p>Carregando {title}...</p>;
 
   return (
