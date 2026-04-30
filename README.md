@@ -18,6 +18,8 @@ Este frontend **irá se conectar** ao [covidDataFlow (Backend)](https://github.c
 - 🔗 Integração com GitHub (`git remote origin` configurado corretamente)  
 - 📡 Criação do arquivo **api.ts** centralizando funções de consumo da API  
 - 🧱 Componente **Dashboard modular** que recebe título e função de API como props, permitindo reutilização em diferentes páginas  
+- 🌍 Integração do Dashboard com a página **SouthAmericaPage**, consumindo dados do back-end via `getPaisesPorContinente`  
+- 📈 Preparação das views (`PaisesPContinenteView`, `SouthAmericaChartView`) para exibir países e casos em cards e gráficos  
 
 ---
 
@@ -29,6 +31,8 @@ Este frontend **irá se conectar** ao [covidDataFlow (Backend)](https://github.c
 - 📝 Duplicação de funções (`getContinentes`) exigindo padronização no `api.ts`  
 - 🛠️ Ajustes de tipagem em TypeScript para evitar erros de compilação  
 - 📊 Configuração inicial do Chart.js para renderizar corretamente os gráficos  
+- 🔗 Endpoint retornava apenas nomes de países sem números de casos → necessidade de ajuste no back-end para enriquecer os dados  
+- 🎛️ Integração entre componentes genéricos (Dashboard) e views específicas (gráficos, cards) exigiu ajustes de props e tipagem  
 
 ---
 
