@@ -1,56 +1,65 @@
 // src/api.ts
 const API_BASE = "http://127.0.0.1:8000";
 
+// Função auxiliar para tratar erros
+async function fetchJson(url: string) {
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`Erro ao buscar ${url}: ${res.status} ${res.statusText}`);
+  }
+  return res.json();
+}
+
 // Status da API
 export async function getStatus() {
-  const res = await fetch(`${API_BASE}/status`);
-  return res.json();
+  return fetchJson(`${API_BASE}/status`);
 }
 
 // Continentes
 export async function getContinentes() {
-  const res = await fetch(`${API_BASE}/api/continentes`);
-  return res.json();
+  try {
+    const res = await fetch(`http://127.0.0.1:8000/api/continentes`);
+    if (!res.ok) {
+      throw new Error(`Erro HTTP ${res.status}: ${res.statusText}`);
+    }
+    return await res.json();
+  } catch (err) {
+    console.error("Erro ao buscar continentes:", err);
+    throw err; // repassa o erro para o Dashboard capturar
+  }
 }
 
 // Países por continente
 export async function getPaisesPorContinente(nome: string) {
-  const res = await fetch(`${API_BASE}/api/continentes/${nome}/paises`);
-  return res.json();
+  return fetchJson(`${API_BASE}/api/continentes/${nome}/paises`);
 }
 
-// Dados de COVID por país
+// Dados de COVID por país (se implementado no backend)
 export async function getCovidPorPais(pais: string) {
-  const res = await fetch(`${API_BASE}/api/covid/${pais}`);
-  return res.json();
+  return fetchJson(`${API_BASE}/api/covid/${pais}`);
 }
 
-// Dados de COVID por continente
+// Dados de COVID por continente (se implementado no backend)
 export async function getCovidPorContinente(nome: string) {
-  const res = await fetch(`${API_BASE}/api/covid/continente/${nome}`);
-  return res.json();
+  return fetchJson(`${API_BASE}/api/covid/continente/${nome}`);
 }
 
-// Top N países com mais casos
+// Top N países com mais casos (se implementado no backend)
 export async function getTopPaises(n: number) {
-  const res = await fetch(`${API_BASE}/api/covid/top/${n}`);
-  return res.json();
+  return fetchJson(`${API_BASE}/api/covid/top/${n}`);
 }
 
-// Resumo global
+// Resumo global (se implementado no backend)
 export async function getResumoGlobal() {
-  const res = await fetch(`${API_BASE}/api/covid/resumo_global`);
-  return res.json();
+  return fetchJson(`${API_BASE}/api/covid/resumo_global`);
 }
 
-// Evolução temporal de um país
+// Evolução temporal de um país (se implementado no backend)
 export async function getEvolucaoPais(pais: string) {
-  const res = await fetch(`${API_BASE}/api/covid/evolucao/${pais}`);
-  return res.json();
+  return fetchJson(`${API_BASE}/api/covid/evolucao/${pais}`);
 }
 
-// Ranking de países dentro de um continente
+// Ranking de países dentro de um continente (se implementado no backend)
 export async function getRankingContinente(nome: string) {
-  const res = await fetch(`${API_BASE}/api/covid/ranking/${nome}`);
-  return res.json();
+  return fetchJson(`${API_BASE}/api/covid/ranking/${nome}`);
 }
