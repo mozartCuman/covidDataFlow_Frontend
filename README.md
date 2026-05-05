@@ -20,6 +20,16 @@ Este frontend **irá se conectar** ao [covidDataFlow (Backend)](https://github.c
 - 🧱 Componente **Dashboard modular** que recebe título e função de API como props, permitindo reutilização em diferentes páginas  
 - 🌍 Integração do Dashboard com a página **SouthAmericaPage**, consumindo dados do back-end via `getPaisesPorContinente`  
 - 📈 Preparação das views (`PaisesPContinenteView`, `SouthAmericaChartView`) para exibir países e casos em cards e gráficos  
+- 🔗 Substituição do `onHomeClick` por `Link` do **React Router** no `Header`, simplificando a navegação  
+- 🎨 Ajuste visual do `Header` com hover animado, estilo fixo no topo e integração direta com rotas (`/home`, `/south-america`)  
+- 📊 Integração do gráfico de casos por país usando a API `getCovidPorContinente`, adaptando o card para consumir `dados_covid` (objeto com países como chave)  
+- 🧩 Criação da página **SouthAmericaPage** com layout flex (`cards-container`) para suportar múltiplos gráficos lado a lado  
+- 🏠 Ajustes na **Home (App.tsx)**:
+  - Seção inicial com instrução “Clique ou role para continuar”  
+  - Scroll suave para a seção Home usando `scrollIntoView`  
+  - Header animado que aparece ao rolar além da primeira tela  
+  - `Summary` encapsulado em card centralizado com estilo consistente  
+- 📂 Organização dos estilos em `styles/Pages.css` para aplicar flex layout e responsividade  
 
 ---
 
@@ -33,6 +43,8 @@ Este frontend **irá se conectar** ao [covidDataFlow (Backend)](https://github.c
 - 📊 Configuração inicial do Chart.js para renderizar corretamente os gráficos  
 - 🔗 Endpoint retornava apenas nomes de países sem números de casos → necessidade de ajuste no back-end para enriquecer os dados  
 - 🎛️ Integração entre componentes genéricos (Dashboard) e views específicas (gráficos, cards) exigiu ajustes de props e tipagem  
+- 🧩 Necessidade de adaptar o card para consumir `dados_covid` (objeto com países como chave) em vez de arrays simples  
+- 🏗️ Ajustes no `Header` para evitar erros de tipagem, tornando a navegação mais simples com `Link`  
 
 ---
 
