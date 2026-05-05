@@ -1,12 +1,18 @@
 // src/pages/SouthAmericaPage.tsx
-import Dashboard from "../components/Dashboard";
-import { getPaisesPorContinente } from "../api/Api";
+import CasosPPaisPContinente from "../components/cards/CasosPPaisPContinente";
+import Header from "../components/Header";
+//@ts-ignore
+import "../styles/Pages.css";
+import { useNavigate } from "react-router-dom"; // ✅ importa o hook
 
 export default function SouthAmericaPage() {
+  const navigate = useNavigate();
+
   return (
-    <Dashboard
-      title="Casos por País - América do Sul"
-      fetchData={() => getPaisesPorContinente("South America")}
-    />
+    <div className="cards-container">
+      <Header />  
+      <CasosPPaisPContinente continente="South America" />
+      {/* Aqui você pode adicionar outros cards, ex: MortesPPaisPContinente */}
+    </div>
   );
 }

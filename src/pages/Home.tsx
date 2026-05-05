@@ -20,7 +20,10 @@ export default function App() {
   }, []);
 
   const goToHome = () => {
-    window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+    const homeSection = document.getElementById("home");
+    if (homeSection) {
+      homeSection.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -31,14 +34,14 @@ export default function App() {
         style={{
           minHeight: "100vh",
           display: "flex",
-          flexDirection: "column",   // organiza em coluna
-          justifyContent: "center",  // centraliza verticalmente
-          alignItems: "center",      // centraliza horizontalmente
-          gap: "2rem",               // espaço entre balão e card
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "2rem",
           cursor: "pointer",
         }}
       >
-        {/* Balão de instrução flexível acima */}
+        {/* Balão de instrução */}
         <div
           style={{
             backgroundColor: "rgba(0,0,0,0.7)",
@@ -52,7 +55,7 @@ export default function App() {
           Clique ou role para continuar
         </div>
 
-        {/* Card cinza claro envolvendo o Article */}
+        {/* Card com Article */}
         <div
           style={{
             backgroundColor: "var(--color-cinza-claro)",
@@ -69,8 +72,8 @@ export default function App() {
       </section>
 
       {/* Seção Home */}
-      <section style={{ minHeight: "100vh" }}>
-        {/* Header animado, fixo e largura total */}
+      <section id="home" style={{ minHeight: "100vh" }}>
+        {/* Header fixo com animação */}
         <div
           style={{
             width: "100%",
@@ -84,10 +87,10 @@ export default function App() {
             zIndex: 1000,
           }}
         >
-          <Header onHomeClick={goToHome} />
+          <Header />
         </div>
 
-        {/* Card cinza claro envolvendo TODAS as informações da Home */}
+        {/* Card com Summary */}
         <div
           style={{
             backgroundColor: "var(--color-cinza-claro)",
@@ -98,7 +101,7 @@ export default function App() {
             maxWidth: "900px",
             marginLeft: "auto",
             marginRight: "auto",
-            paddingBottom: "6rem", // espaço extra para o conteúdo
+            paddingBottom: "6rem",
           }}
         >
           <Summary />

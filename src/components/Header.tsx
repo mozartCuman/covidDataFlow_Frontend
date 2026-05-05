@@ -1,21 +1,17 @@
 import { Link } from "react-router-dom";
 
-type HeaderProps = {
-  onHomeClick: () => void;
-};
-
-export default function Header({ onHomeClick }: HeaderProps) {
+export default function Header() {
   const buttonStyle: React.CSSProperties = {
-    backgroundColor: "transparent",       // transparente
-    color: "var(--color-chumbo)",         // texto chumbo
-    border: "none",                       // sem borda
-    padding: "6px 14px",                  // mais fino ainda
+    backgroundColor: "transparent",
+    color: "var(--color-chumbo)",
+    border: "none",
+    padding: "6px 14px",
     borderRadius: "4px",
     cursor: "pointer",
     fontWeight: "bold",
-    minWidth: "110px",                    // largura mínima igual
+    minWidth: "110px",
     textAlign: "center",
-    fontSize: "14px",                     // fonte menor
+    fontSize: "14px",
     transition: "transform 0.2s ease, box-shadow 0.2s ease",
   };
 
@@ -26,9 +22,9 @@ export default function Header({ onHomeClick }: HeaderProps) {
         justifyContent: "flex-start",
         alignItems: "center",
         gap: "12px",
-        padding: "6px 14px",               // header mais fino
-        backgroundColor: "var(--color-marfin)", // fundo marfim
-        color: "var(--color-chumbo)",           // texto chumbo
+        padding: "6px 14px",
+        backgroundColor: "var(--color-marfin)",
+        color: "var(--color-chumbo)",
         position: "fixed",
         top: 0,
         left: 0,
@@ -36,10 +32,10 @@ export default function Header({ onHomeClick }: HeaderProps) {
         zIndex: 1000,
       }}
     >
-      {/* Botão Home */}
-      <button
-        onClick={onHomeClick}
-        style={buttonStyle}
+      {/* Botão Home como Link */}
+      <Link
+        to="/"
+        style={{ ...buttonStyle, textDecoration: "none" }}
         onMouseEnter={(e) => {
           e.currentTarget.style.transform = "translateY(-3px)";
           e.currentTarget.style.boxShadow = "0 3px 5px rgba(0,0,0,0.2)";
@@ -50,7 +46,7 @@ export default function Header({ onHomeClick }: HeaderProps) {
         }}
       >
         Home
-      </button>
+      </Link>
 
       {/* Link para América do Sul */}
       <Link
@@ -75,7 +71,7 @@ export default function Header({ onHomeClick }: HeaderProps) {
         style={{
           flex: 1,
           marginLeft: "15px",
-          padding: "6px",                   // mais fino
+          padding: "6px",
           borderRadius: "4px",
           border: "none",
           color: "var(--color-chumbo)",
