@@ -31,3 +31,21 @@
   transform: scale(1.05);
   background: #e0f7fa;
 }
+
+/* 📱 Ajuste para telas pequenas */
+@media (max-width: 375px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr; /* cards em coluna */
+    gap: 12px;
+  }
+
+  .dashboard-card {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .dashboard h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
