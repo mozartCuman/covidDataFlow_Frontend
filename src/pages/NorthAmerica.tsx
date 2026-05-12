@@ -3,14 +3,13 @@ import Header from "../components/Header";
 //@ts-ignore
 import "../styles/Pages.css";
 import { useNavigate } from "react-router-dom"; 
-
-export default function SouthAmericaPage() {
+export default function NorthAmericaPage() {
   const navigate = useNavigate();
 
   return (
     <div className="cards-container">
       <Header />  
-      <CasosPPaisPContinente continente="South America" />
+      <CasosPPaisPContinente continente="North America" />
       {}
     </div>
   );

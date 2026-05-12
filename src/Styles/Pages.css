@@ -13,3 +13,19 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   padding: 16px;
 }
+
+/* 📱 Ajuste para telas pequenas (iPhone SE e similares) */
+@media (max-width: 375px) {
+  .cards-container {
+    flex-direction: column; /* empilha os cards */
+    align-items: center;
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .card {
+    flex: 1 1 90%;   /* ocupa quase toda a largura */
+    width: 90%;
+    padding: 24px;
+  }
+}
